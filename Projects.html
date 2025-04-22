@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Saurabh Kumar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .project img {
+      max-width: 80%; /* Reduced from 100% to 50% */
+      
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin-top: 1rem;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .project {
+      margin-bottom: 2rem;
+    }
+    .project img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin-top: 1rem;
+    }
+    .btn-live {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--primary);
+      color: white;
+      margin-top: 2rem;
+    }
+    footer .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    :root {
+      --bg: #f5f7fa;
+      --text: #333;
+      --primary: #2a5298;
+      --card-bg: white;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --card-bg: #1e1e1e;
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* New Section for Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .skill {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 0.5rem;
+      width: 200px;
+      text-align: center;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .project {
+        width: 100%;
+        margin: 0 0 2rem 0;
+      }
+      .skills {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <header>
+    <h1>My Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="project">
+      <h2>Statistic</h2>
+      <p>Basic concepts and applications of statistics using Python and visualizations.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Statistic" target="_blank">View Repo</a>
+      <img src="image/statistics.jpg" alt="Statistics">
+    </div>
+
+    <div class="project">
+      <h2>Deep Learning</h2>
+      <p>Deep learning notebooks including CNNs, ANN models, and real-time applications.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Deep-Learning" target="_blank">View Repo</a>
+      <img src="image/deep-learning.jpg" alt="Deep Learning">
+    </div>
+
+    <div class="project">
+      <h2>Machine Learning A to Z</h2>
+      <p>A complete ML roadmap including supervised and unsupervised learning projects.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Machine-Learning-A_to_Z" target="_blank">View Repo</a>
+      <img src="image/ML.jpg" alt="ML A to Z">
+    </div>
+
+    <div class="project">
+      <h2>Excel Analytics: Hotel Booking</h2>
+      <p>Excel dashboard and data cleaning for hotel booking and cancellation trends.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Hotel-Booking-and-Cancellation_Data-Analytics-Project-Excel-" target="_blank">View Repo</a>
+      <img src="image/excel.webp" alt="Excel Analytics">
+    </div>
+
+    <div class="project">
+      <h2>Power BI Projects</h2>
+      <p>Power BI dashboards for sales performance and data storytelling with KPIs and visuals.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Sales-Performance-Power-Bi-Project" target="_blank">Sales Dashboard</a>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Power-BI-A_to_Z" target="_blank">Full Project</a>
+      <img src="image/power bi.png" alt="Power BI Dashboard" >
+    </div>
+
+    <div class="project">
+      <h2>Python Libraries</h2>
+      <p>Practical use cases and visualizations with core Python libraries like Pandas, NumPy, Seaborn, and Matplotlib.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Pandas---Python-Library" target="_blank">Pandas</a>
+      <a class="btn-live" href="https://github.com/Saurabh12770/NumPy---Python-Library" target="_blank">NumPy</a>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Matplotlib--Python-Library" target="_blank">Matplotlib</a>
+      <a class="btn-live" href="https://github.com/Saurabh12770/Seaborn-Python-Lybrary" target="_blank">Seaborn</a>
+      <img src="image/Python-Libraries.webp" alt="Python Data Libraries">
+    </div>
+
+    <div class="project">
+      <h2>More on GitHub</h2>
+      <p>For full code, tutorials, and updates, check out all my work on GitHub.</p>
+      <a class="btn-live" href="https://github.com/Saurabh12770" target="_blank">Visit My GitHub</a>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills">
+      <div class="skill">
+        <h3>Python</h3>
+        <p>Extensive experience with Python for data science, automation, and web scraping.</p>
+      </div>
+      <div class="skill">
+        <h3>Machine Learning</h3>
+        <p>Skilled in both supervised and unsupervised learning algorithms, model training, and evaluation.</p>
+      </div>
+      <div class="skill">
+        <h3>Data Visualization</h3>
+        <p>Proficient with tools like Matplotlib, Seaborn, and Power BI to create insightful visualizations.</p>
+      </div>
+      <div class="skill">
+        <h3>Deep Learning</h3>
+        <p>Experience with TensorFlow, Keras, and building CNNs and RNNs for real-world applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Saurabh Kumar. All rights reserved.</p>
+
+    <p>Website built with 💻 and ❤️ using HTML, CSS, and JavaScript</p>
+    <p>Location: Bhopal, India | Languages: English, Hindi, Urdu</p>
+    <div class="social-links">
+      <a href="https://www.hackerrank.com/saurabhkumar1271" target="_blank"><i class="fab fa-hackerrank"></i></a>
+      <a href="https://github.com/Saurabh12770" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://leetcode.com/saurabh12770" target="_blank"><i class="fas fa-code"></i></a>
+      <a href="https://www.linkedin.com/in/saurabh-kumar-09895a22b" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/Saurabh12770" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/saurabh__unstoppable" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/196aKm7EiA/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      // Toggle button text
+      const button = document.querySelector('.dark-toggle');
+      if (document.body.classList.contains("dark")) {
+        button.textContent = "🌞 Toggle Light Mode";
+      } else {
+        button.textContent = "🌙 Toggle Dark Mode";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Saurabh Kumar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --text: #333;
+      --primary: #2a5298;
+      --card-bg: white;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --card-bg: #1e1e1e;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .dark-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    section {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+    form label { display: block; margin: 1rem 0 0.5rem; font-weight: 600; }
+    form input, form textarea {
+      width: 100%; padding: 0.75rem; border: 1px solid #ccc;
+      border-radius: 5px; resize: none;
+    }
+    form button {
+      margin-top: 1rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .contact-info { margin-top: 2rem; }
+    .contact-info p { margin: 0.5rem 0; }
+    .social-links {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .social-links a i { font-size: 1.2rem; }
+    .resume-btn { margin-top: 2rem; text-align: center; }
+    .resume-btn a {
+      text-decoration: none;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .map-embed {
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--primary);
+      color: white;
+      margin-top: 2rem;
+    }
+    footer .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 1.5rem;
+      }
+      section {
+        padding: 1.5rem;
+        max-width: 90%;
+      }
+      .social-links a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      header {
+        padding: 1rem;
+      }
+      .dark-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+      section {
+        padding: 1rem;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <header>
+    <h1>Contact Me</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Send Me a Message</h2>
+    <form action="#" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> saurabhkumar12770@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9135791602</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/saurabh-kumar-09895a22b" target="_blank">Saurabh Kumar</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Saurabh12770" target="_blank">github.com/Saurabh12770</a></p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.hackerrank.com/saurabhkumar1271" target="_blank"><i class="fab fa-hackerrank"></i></a>
+      <a href="https://github.com/Saurabh12770" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://leetcode.com/saurabh12770" target="_blank"><i class="fas fa-code"></i></a>
+      <a href="https://www.linkedin.com/in/saurabh-kumar-09895a22b" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/Saurabh12770" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/saurabh__unstoppable" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/196aKm7EiA/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <div class="resume-btn">
+      <a href="Saurabh_Resume.pdf" download>📄 Download My Resume</a>
+    </div>
+
+    <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.548630772643!2d77.41824397598209!3d23.76520608458905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c426271b6d8f7%3A0xc20b1eb3ad4c61a5!2sAshoka%20Garden%2C%20Bhopal%2C%20Madhya%20Pradesh%20462010!5e0!3m2!1sen!2sin!4v1713866025203!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Saurabh Kumar. All rights reserved.</p>
+    <p>Website built with 💻 and ❤️ using HTML, CSS, and JavaScript</p>
+    <p>Location: Bhopal, India | Languages: English, Hindi, Urdu</p>
+
+    <div class="social-links">
+      <a href="https://www.hackerrank.com/saurabhkumar1271" target="_blank"><i class="fab fa-hackerrank"></i></a>
+      <a href="https://github.com/Saurabh12770" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://leetcode.com/saurabh12770" target="_blank"><i class="fas fa-code"></i></a>
+      <a href="https://www.linkedin.com/in/saurabh-kumar-09895a22b" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/Saurabh12770" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/saurabh__unstoppable" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/196aKm7EiA/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
