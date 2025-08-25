@@ -1,326 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saurabh Kumar | Portfolio</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Saurabh Kumar's portfolio showcasing web development, software engineering, and data analytics.">
-  <meta name="keywords" content="Saurabh Kumar, Web Developer, Portfolio, Bhopal, RGPV, JavaScript, HTML, CSS, Data Analyst">
-  <meta name="author" content="Saurabh Kumar">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Saurabh Kumar | Portfolio">
-  <meta property="og:description" content="Explore the work and skills of Saurabh Kumar.">
-  <meta property="og:image" content="image/formal image2.jpg">
-  <meta property="og:url" content="https://yourdomain.com">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saurabh Kumar | Portfolio</title>
+<meta name="description" content="Saurabh Kumar — web & data projects, articles, certifications, and ways to connect."/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<style>
+:root{
+  --primary:#2a5298; --bg:#f5f7fa; --text:#222; --card:#fff; --accent:#00b894; --shadow:0 10px 30px rgba(0,0,0,.12);
+  --nav-bg: rgba(255,255,255,0.35); --nav-border: rgba(255,255,255,0.55); --nav-text:#0b1426;
+}
+body.dark{
+  --bg:#0e1016; --text:#e9eef6; --card:#151a24;
+  --nav-bg: rgba(10,14,22,0.45); --nav-border: rgba(255,255,255,0.2); --nav-text:#e9eef6;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,Arial,sans-serif}
 
-  <style>
-    :root {
-      --primary: #2a5298;
-      --bg: #f5f7fa;
-      --text: #333;
-      --card: white;
-    }
-    body.dark {
-      --bg: #121212;
-      --text: #f0f0f0;
-      --card: #1e1e1e;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-      opacity: 0;
-      animation: fadeIn 1s ease-in-out forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));width:0%;z-index:9999}
 
-    .header-video-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      max-height: 380px;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .background-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.4);
-    }
+/* dark toggle */
+.dark-toggle{position:fixed;right:14px;bottom:18px;border:none;background:var(--primary);color:#fff;border-radius:999px;width:48px;height:48px;box-shadow:var(--shadow);cursor:pointer;z-index:1000}
 
-    .dark-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      background: var(--primary);
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 1000;
-    }
+/* back to top */
+#topBtn{position:fixed;left:14px;bottom:18px;border:none;background:var(--accent);color:#012e2a;border-radius:999px;width:48px;height:48px;box-shadow:var(--shadow);cursor:pointer;display:none;z-index:1000}
 
-    header {
-      position: relative;
-      text-align: center;
-      padding: 2rem 1rem;
-      color: white;
-    }
+/* header */
+header{position:relative;text-align:center;padding:2rem 1rem;color:#fff;overflow:hidden}
+.header-video-container{position:absolute;inset:0;max-height:380px;z-index:-1}
+.background-video{width:100%;height:100%;object-fit:cover;filter:brightness(.4)}
+.profile-section{display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.profile-pic{width:170px;height:170px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:var(--shadow)}
 
-    header h1 { margin: 0.2em 0; }
+/* Always-visible NAV (works in both modes) */
+nav[aria-label="Primary"]{
+  position:sticky; top:10px; margin:12px auto 0; width:fit-content;
+  display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;padding:.6rem .8rem;border-radius:999px;
+  background:var(--nav-bg); border:1px solid var(--nav-border); backdrop-filter:blur(10px);
+}
+nav[aria-label="Primary"] a{
+  color:var(--nav-text); text-decoration:none; font-weight:700; padding:.35rem .7rem; border-radius:8px;
+}
+nav[aria-label="Primary"] a:hover{ background:rgba(255,255,255,.25) }
 
-    .profile-section {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      gap: 1rem;
-      position: relative;
-      z-index: 1;
-    }
+/* Common UI */
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--primary);color:#fff;padding:.6rem 1rem;border-radius:10px;text-decoration:none;box-shadow:var(--shadow);border:none;cursor:pointer}
+.btn.ghost{background:#ffffff1a;border:1px solid #ffffff55;color:#fff}
+section{max-width:1100px;margin:auto;padding:2rem}
+.section-title{font-size:1.8rem;color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.4rem;margin-bottom:1rem}
 
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-    }
+/* galleries */
+.image-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.image-row img{width:250px;border-radius:12px;box-shadow:var(--shadow)}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-      position: relative;
-      z-index: 1;
-    }
+/* cards / blocks */
+.highlights{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:1.2rem;margin-top:1rem}
+.highlights h3{margin:.1rem 0;color:var(--primary)}
+.chips{margin-top:.5rem}
+.chip{display:inline-block;background:#eef3ff;color:#14305b;border:1px solid #d3dcfb;padding:.25rem .6rem;border-radius:999px;margin:.2rem}
+body.dark .chip{background:#1e2740;color:#d5e1ff;border-color:#2b3a61}
 
-    nav a {
-      color: #ffffffcc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: white;
-    }
+/* Articles */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card .thumb{height:160px;background:#e9eef8}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .content{padding:1rem}
+.card h4{margin:.2rem 0;color:var(--primary)}
+.meta{font-size:.85rem;color:#6b7280;margin-bottom:.5rem}
+body.dark .meta{color:#b4bed1}
+.badge{background:var(--accent);color:#012e2a;padding:.2rem .5rem;border-radius:8px;font-weight:800;font-size:.8rem}
+.actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+.actions .btn{padding:.45rem .7rem;border-radius:8px}
+.quote{font-style:italic;margin-top:.6rem;color:#4b5563}
 
-    section {
-      padding: 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+/* Certifications */
+.cert-list{list-style:none;padding-left:0}
+.cert-list li{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:1rem;margin:.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cert-badge{background:var(--accent);color:#012e2a;font-weight:800;padding:.25rem .6rem;border-radius:8px}
 
-    .section-title {
-      font-size: 1.8rem;
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-    }
+/* Newsletter */
+.subscribe-row{display:flex;gap:10px;flex-wrap:wrap}
+.subscribe-row input{padding:.6rem .8rem;border-radius:10px;border:1px solid #c9d5ff;background:#fff;color:#111}
+body.dark .subscribe-row input{background:#121722;border-color:#27314a;color:#e9eef6}
 
-    .btn {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 0.6rem 1rem;
-      margin-top: 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background: #1e3c72;
-    }
+/* Footer */
+footer{background:#0b1426;color:#dbe6ff;margin-top:2rem}
+.footer-inner{max-width:1100px;margin:0 auto;padding:24px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+footer h4{margin:.2rem 0 .6rem 0;color:#cfe2ff}
+footer a{color:#cfe2ff;text-decoration:none}
+footer a:hover{text-decoration:underline}
+.footer-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.footer-actions .btn{background:#2a5298}
+.copy{font-size:.9rem;color:#9fb0d1;margin-top:12px}
+.social-links a{color:#cfe2ff;margin:0 8px;font-size:20px}
 
-    .image-row {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .image-row img {
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .highlights {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      background: var(--card);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .highlights h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .highlights ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
-
-    canvas {
-      max-width: 100%;
-      margin-top: 2rem;
-    }
-
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 2rem;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      color: #fff;
-      font-size: 20px;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-      }
-      header h1 {
-        font-size: 1.8rem;
-      }
-      .section-title {
-        font-size: 1.4rem;
-      }
-      .btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
-      }
-    }
-  </style>
+/* Responsive */
+@media(max-width:768px){
+  .profile-pic{width:140px;height:140px}
+  .section-title{font-size:1.5rem}
+}
+</style>
 </head>
-
 <body>
-  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+<div id="progress"></div>
+<button class="dark-toggle" id="darkBtn" title="Toggle dark">🌙</button>
+<button id="topBtn" title="Back to top">↑</button>
 
-  <header>
-    <div class="header-video-container">
-      <video class="background-video" autoplay muted loop>
-        <source src="bg-video.mp4" type="video/mp4">
-      </video>
+<header>
+  <div class="header-video-container">
+    <video class="background-video" autoplay muted loop playsinline>
+      <source src="bg-video.mp4" type="video/mp4"/>
+    </video>
+  </div>
+
+  <div class="profile-section" data-aos="fade-up">
+    <img src="formal image2.jpg" alt="Saurabh Kumar" class="profile-pic"/>
+    <h1>Saurabh Kumar</h1>
+    <p><span class="typewriter"></span></p>
+    <div class="chips">
+      <span class="chip">Python • SQL • Power BI</span>
+      <span class="chip">Web • Data • ML</span>
+      <span class="chip">Ahmedabad, INDIA</span>
     </div>
-    <div class="profile-section">
-      <img src="formal image2.jpg" alt="Saurabh Kumar" class="profile-pic" />
-      <h1>Saurabh Kumar</h1>
-      <p><span class="typewriter"></span></p>
+    <div style="margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center">
+      <a class="btn" href="Saurabh.Resume.Data.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+      <a class="btn" target="_blank" href="https://www.linkedin.com/in/saurabh-kumar-09895a22b"><i class="fa-brands fa-linkedin"></i> Follow on Linkedin</a>
+      <a class="btn" target="_blank" href="https://www.linkedin.com/in/saurabh-kumar-09895a22b"><i class="fa-regular fa-bell"></i> Turn On LIN Notifications</a>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="education.html">Education</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-      <a href="Saurabh Resume Data.pdf" class="btn" download>📄 Download CV</a>
-    </nav>
-  </header>
+  </div>
 
-  <section data-aos="fade-up">
-    <h2 class="section-title">Welcome to My Portfolio</h2>
-    <p>I'm Saurabh Kumar, a passionate technologist with a background in software engineering, web development, and data analytics. Explore my site to learn more!</p>
-    <a href="#" class="btn">Learn More About Me</a>
+  <!-- Always-visible nav -->
+  <nav aria-label="Primary">
+    <a href="#welcome">Welcome</a>
+    <a href="index.html">Home</a>
+    <a href="#certs">Certifications</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="#articles">Articles</a>
+    <a href="#newsletter">Newsletter</a>
+  </nav>
+</header>
 
-    <div class="image-row">
-      <img src="feature1.jpg" alt="Project Snapshot 1">
-      <img src="feature2.jpg" alt="Project Snapshot 2">
-      <img src="feature3.jpg" alt="Tech Moment">
+<section id="welcome" data-aos="fade-up">
+  <h2 class="section-title">Welcome to My Portfolio</h2>
+  <p>I’m a developer‑analyst who loves turning messy data into useful dashboards and building web apps that people enjoy using. Below you’ll find my latest thinking, certifications, and ways to connect.</p>
+  <div class="image-row">
+    <img src="feature1.jpg" alt="Project Snapshot 1"/>
+    <img src="feature2.jpg" alt="Project Snapshot 2"/>
+    <img src="feature3.jpg" alt="Tech Moment"/>
+  </div>
+
+  <div class="highlights" data-aos="fade-up">
+    <h3>Highlights</h3>
+    <ul>
+      <li>💡 Real-world projects: dashboards, automation, and ML experiments</li>
+      <li>🌐 Clean, responsive UI with accessible, fast-loading pages</li>
+      <li>📊 Analytics stack: Python, SQL, Excel, Power BI</li>
+      <li>🎯 Learning mindset with weekly content on analytics & careers</li>
+    </ul>
+    <div class="chips" style="margin-top:.6rem">
+      <span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span>
+      <span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">HTML/CSS/JS</span>
     </div>
+  </div>
 
-    <div class="highlights" data-aos="fade-up">
-      <h3>Highlights</h3>
-      <ul>
-        <li>💡 Completed multiple internships with real-world impact</li>
-        <li>🌐 Built responsive websites and dashboards</li>
-        <li>📊 Experienced with data analysis and visualization tools</li>
-        <li>🎯 Always eager to learn and adapt to new technologies</li>
-      </ul>
+  <div class="highlights" data-aos="fade-left">
+    <h3>Skills Radar</h3>
+    <canvas id="skillChart" width="600" height="360"></canvas>
+  </div>
+</section>
+
+<!-- Articles & Insights -->
+<section id="articles" data-aos="fade-up">
+  <h2 class="section-title">Articles & Insights</h2>
+  <p>Educational • trend-aware • actionable. Previews below — subscribe for full posts.</p>
+  <div class="grid">
+    <article class="card">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="AI & careers"/></div>
+      <div class="content">
+        <span class="badge">7 min read</span>
+        <h4>How AI Is Reshaping Data Analytics Careers</h4>
+        <p class="meta">Career • AI Tools</p>
+        <p>From SQL-first roles to hybrid analyst–engineer paths, AI copilots now speed up wrangling, documentation, and EDA while raising the bar on judgment and communication.</p>
+        <p class="quote">“The best analysts aren’t replaced — they’re augmented.” — inspired by industry posts on DEV Community & Towards Data Science</p>
+        <div class="actions">
+          <a class="btn" href="#newsletter"><i class="fa-regular fa-bell"></i> Get full article</a>
+          <button class="btn" onclick="like(this)"><i class="fa-regular fa-heart"></i> <span>Like</span></button>
+          <button class="btn" onclick="share('How AI Is Reshaping Data Analytics Careers')"><i class="fa-solid fa-share"></i> Share</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Interviews"/></div>
+      <div class="content">
+        <span class="badge">6 min read</span>
+        <h4>Top 5 Interview Mistakes Data Candidates Make</h4>
+        <p class="meta">Interviews • Hiring</p>
+        <p>Common misses: jumping to models before the problem, weak SQL edge cases, unclear metrics, no error handling, and ignoring stakeholder trade‑offs. Fixes included.</p>
+        <p class="quote">“Show your reasoning, not just the answer.” — theme echoed by practical hiring guides and Nestify blogs</p>
+        <div class="actions">
+          <a class="btn" href="#newsletter">Download checklist</a>
+          <button class="btn" onclick="like(this)"><i class="fa-regular fa-heart"></i> <span>Like</span></button>
+          <button class="btn" onclick="share('Top 5 Interview Mistakes Data Candidates Make')"><i class="fa-solid fa-share"></i> Share</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop" alt="Batch video"/></div>
+      <div class="content">
+        <span class="badge">5 min read</span>
+        <h4>Batch‑Wise Video Creation with ChatGPT + Sora</h4>
+        <p class="meta">Automation • Content</p>
+        <p>A lightweight pipeline: prompt templates → script batches → Sora scenes → captioning → upload. Great for course intros & product explainers.</p>
+        <p class="quote">“Automate the routine so you can focus on storytelling.” — distilled from creator workflows on DEV/TDS</p>
+        <div class="actions">
+          <a class="btn" href="#newsletter">See template</a>
+          <button class="btn" onclick="like(this)"><i class="fa-regular fa-heart"></i> <span>Like</span></button>
+          <button class="btn" onclick="share('Batch‑Wise Video Creation with ChatGPT + Sora')"><i class="fa-solid fa-share"></i> Share</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Certifications from resume -->
+<section id="certs" data-aos="fade-up">
+  <h2 class="section-title">Certifications</h2>
+  <ul class="cert-list">
+    <li>
+      <div>
+        <strong>Powered Data Analytics Job Simulation — Forage (Aug 2025)</strong>
+        <div class="meta">EDA & risk profiling • delinquency prediction • reporting • collections strategy</div>
+      </div>
+      <a class="cert-badge" target="_blank" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_b8S66pmdFDY2drSRZ_1754879588714_completion_certificate.pdf?trk=public_profile_see-credential">View</a>
+    </li>
+    <li>
+      <div>
+        <strong>Analysis & Process Management — Coursera Project Network (Aug 2025)</strong>
+        <div class="meta">Process analysis • bottlenecks • improvement techniques</div>
+      </div>
+      <a class="cert-badge" target="_blank" href="https://www.coursera.org/account/accomplishments/verify/HCGP3PV8ZQH4?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse">Verify</a>
+    </li>
+  </ul>
+</section>
+
+<!-- Newsletter / subscribe row -->
+<section id="newsletter" data-aos="fade-up">
+  <h2 class="section-title">Subscribe</h2>
+  <div class="highlights">
+    <p>Get one concise email per month with new articles, dashboard tips, and resources.</p>
+    <div class="subscribe-row">
+      <input type="email" id="email" placeholder="you@example.com" required/>
+      <button class="btn" onclick="subscribe()">Subscribe</button>
+      <a class="btn" target="_blank" href="https://www.linkedin.com/in/saurabh-kumar-09895a22b"><i class="fa-brands fa-linkedin"></i> Follow on Linkedin</a>
     </div>
+  </div>
+</section>
 
-    <div class="highlights" data-aos="fade-left">
-      <h3>Skill Chart</h3>
-      <canvas id="skillChart" width="400" height="200"></canvas>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#articles">Articles</a> • <a href="#certs">Certifications</a> • <a href="#newsletter">Newsletter</a></p>
+        <p><a href="Saurabh.Resume.Data.pdf" download>Download Resume (PDF)</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a id="emailLink" href="mailto:saurabhkumar12770@gmail.com">saurabhkumar12770@gmail.com</a></p>
+        <div class="footer-actions">
+          <button class="btn" onclick="copyEmail()"><i class="fa-regular fa-copy"></i> Copy Email</button>
+          <button class="btn" onclick="printResume()"><i class="fa-solid fa-print"></i> Print Resume</button>
+        </div>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <p class="social-links">
+          <a href="https://www.hackerrank.com/saurabhkumar1271" target="_blank"><i class="fab fa-hackerrank"></i></a>
+          <a href="https://github.com/Saurabh12770" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://leetcode.com/saurabh12770" target="_blank"><i class="fas fa-code"></i></a>
+          <a href="https://www.linkedin.com/in/saurabh-kumar-09895a22b" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/Saurabh12770" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/saurabh__unstoppable" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/196aKm7EiA/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </p>
+        <p><small>Local time: <span id="localTime"></span></small></p>
+      </div>
     </div>
-  </section>
+    <p class="copy">© <span id="year"></span> Saurabh Kumar • Built with HTML, CSS & JS</p>
+  </div>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Saurabh Kumar. All rights reserved.</p>
-    <p>Website built with 💻 and ❤️ using HTML, CSS, and JavaScript</p>
-    <p>Location: Bhopal, India | Native Place: Thanka, Shivajinagar, Samastipur, Bihar, Pincode 848117</p>
-    <div class="social-links">
-      <a href="https://www.hackerrank.com/saurabhkumar1271" target="_blank"><i class="fab fa-hackerrank"></i></a>
-      <a href="https://github.com/Saurabh12770" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://leetcode.com/saurabh12770" target="_blank"><i class="fas fa-code"></i></a>
-      <a href="https://www.linkedin.com/in/saurabh-kumar-09895a22b" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://x.com/Saurabh12770" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/saurabh__unstoppable" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/share/196aKm7EiA/" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-  </footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
 
-  <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+// typewriter
+new Typed('.typewriter',{strings:['Software Engineer','Web Developer','Data Analyst'],typeSpeed:50,backSpeed:30,loop:true});
 
-  <script>
-    AOS.init();
+// theme toggle
+const darkBtn=document.getElementById('darkBtn');
+darkBtn.addEventListener('click',()=>{document.body.classList.toggle('dark')});
 
-    const typed = new Typed('.typewriter', {
-      strings: ['Software Engineer', 'Web Developer', 'Data Analyst'],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
+// progress bar + back-to-top
+const prog=document.getElementById('progress');
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{
+  const p=100*(window.scrollY)/(document.body.scrollHeight-window.innerHeight);
+  prog.style.width=p+'%';
+  topBtn.style.display=window.scrollY>350?'block':'none';
+});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      const btn = document.querySelector('.dark-toggle');
-      btn.textContent = document.body.classList.contains("dark") ? "🌞 Toggle Light Mode" : "🌙 Toggle Dark Mode";
-    }
+// Radar chart (with ML, Deep Learning, NLP)
+const ctx=document.getElementById('skillChart');
+const isDark=()=>document.body.classList.contains('dark');
+const radar = new Chart(ctx,{type:'radar',
+  data:{
+    labels:['Python','SQL','Excel','Power BI','Machine Learning','Deep Learning','NLP','JavaScript'],
+    datasets:[{
+      label:'Skill Level',
+      data:[88,86,82,72,78,70,68,80],
+      fill:true,
+      backgroundColor:'rgba(42,82,152,0.25)',
+      borderColor:'rgba(42,82,152,0.9)',
+      pointBackgroundColor:'rgba(42,82,152,1)'
+    }]
+  },
+  options:{
+    responsive:true, scales:{ r:{
+      beginAtZero:true, suggestedMax:100, angleLines:{ color: gridColor() }, grid:{ color: gridColor() },
+      pointLabels:{ color: labelColor(), font:{ family:"Poppins" } }, ticks:{ showLabelBackdrop:false, color: labelColor() }
+    }},
+    plugins:{ legend:{ labels:{ color: labelColor() } } }
+  }
+});
+function gridColor(){ return isDark() ? 'rgba(255,255,255,.2)' : 'rgba(0,0,0,.2)'; }
+function labelColor(){ return isDark() ? '#e9eef6' : '#0b1426'; }
+// update chart colors on theme switch
+const observer = new MutationObserver(()=>{ 
+  radar.options.scales.r.grid.color = gridColor();
+  radar.options.scales.r.angleLines.color = gridColor();
+  radar.options.scales.r.pointLabels.color = labelColor();
+  radar.options.plugins.legend.labels.color = labelColor();
+  radar.update();
+});
+observer.observe(document.body,{attributes:true,attributeFilter:['class']});
 
-    const ctx = document.getElementById('skillChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Python', 'SQL','Excel','Power BI','Machine Learning','HTML', 'CSS', 'JavaScript'],
-        datasets: [{
-          label: 'Skill Level (%)',
-          data: [80, 85, 80, 60, 70,90,75,65],
-          backgroundColor: 'rgba(42, 82, 152, 0.8)'
-        }]
-      }
-    });
-  </script>
+// subscribe
+function subscribe(){
+  const el=document.getElementById('email');
+  const e=el.value.trim();
+  if(!e || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)){ toast('Enter a valid email'); return; }
+  toast('Thanks! You are on the list.'); el.value='';
+}
+// toast
+function toast(msg){
+  const t=document.createElement('div');
+  t.textContent=msg;
+  t.style.position='fixed'; t.style.right='16px'; t.style.bottom='80px';
+  t.style.background='var(--primary)'; t.style.color='#fff'; t.style.padding='10px 14px';
+  t.style.borderRadius='10px'; t.style.boxShadow='var(--shadow)';
+  document.body.appendChild(t); setTimeout(()=>t.remove(),2200);
+}
+// like/share
+function like(btn){
+  btn.querySelector('i').classList.toggle('fa-regular');
+  btn.querySelector('i').classList.toggle('fa-solid');
+  toast('Thanks for the ❤️');
+}
+function share(title){
+  const url=location.href;
+  if(navigator.share){navigator.share({title, url});}
+  else{navigator.clipboard.writeText(url); toast('Link copied');}
+}
+
+// footer utils
+function copyEmail(){
+  const email='saurabhkumar12770@gmail.com';
+  navigator.clipboard.writeText(email); toast('Email copied');
+}
+function printResume(){ window.open('Saurabh.Resume.Data.pdf','_blank'); }
+document.getElementById('year').textContent = new Date().getFullYear();
+function updateTime(){
+  const d=new Date();
+  document.getElementById('localTime').textContent =
+    d.toLocaleString([], {hour:'2-digit', minute:'2-digit'}) + ' • ' +
+    d.toLocaleDateString([], {year:'numeric', month:'short', day:'2-digit'});
+}
+updateTime(); setInterval(updateTime, 60000);
+</script>
 </body>
 </html>
+
